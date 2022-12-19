@@ -14,16 +14,17 @@ namespace TwinCAT_Launcher.ViewModels
     class MainViewModel
     {   
         VisualStudioHandler studioHandler;
-        public CreateProjectCommand createProjectCommand;
+        public CreateProjectCommand createProjectCommand { get; set; }
         public ProjectData projectData { get; set; }
 
         public MainViewModel()
         {
-            studioHandler= new VisualStudioHandler();
+            studioHandler = new VisualStudioHandler();
             studioHandler.InitialiseVSEnv();
             projectData = new ProjectData();
+            projectData.Name = "TestProject";
+            projectData.Directory = @"C:\Users\Chris\Documents\Projects\";
             createProjectCommand = new CreateProjectCommand(studioHandler);
-            
         }
 
     }

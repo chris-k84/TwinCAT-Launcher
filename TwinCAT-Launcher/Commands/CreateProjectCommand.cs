@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Engine;
+using TwinCAT_Launcher.Models;
 
 namespace TwinCAT_Launcher.Commands
 {
@@ -25,12 +26,11 @@ namespace TwinCAT_Launcher.Commands
 
         public void Execute(object? parameter)
         {
-
-            VisualStudioHandler.CreateDirectory(@"C:\Users\Chris\Desktop\TestProject");
-            VisualStudioHandler.CreateSolution("Test");
-
-            VisualStudioHandler.CreateTCProj("Test");
-
+            ProjectData projectData = (ProjectData)parameter;
+            VisualStudioHandler.SetEnvVisability(true, true);
+            VisualStudioHandler.CreateDirectory(projectData.Directory);
+            VisualStudioHandler.CreateSolution(projectData.Name);
+            VisualStudioHandler.CreateTCProj(projectData.Name);
             VisualStudioHandler.Save();
         }
     }

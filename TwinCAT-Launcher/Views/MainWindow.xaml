@@ -19,11 +19,12 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <Label Content="Project Directory"/>
-            <TextBox Text="C:\Users\Chris\Documents\Projects"/>
+            <TextBox Text="{Binding projectData.Directory}"/>
             <Label Content="Project Name"/>
-            <TextBox Text="Project Name"/>
+            <TextBox Text="{Binding projectData.Name}"/>
             <Button Content="Create"
-                    Command="{Binding createProjectCommand}"/>
+                    Command="{Binding createProjectCommand}"
+                    CommandParameter="{Binding projectData}"/>
         </StackPanel>
     </Grid>
 </Window>
