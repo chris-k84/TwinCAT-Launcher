@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Engine;
-using TwinCAT_Launcher.Models;
+using TwinCAT_Launcher.MVVM.Models;
 
 namespace TwinCAT_Launcher.Commands
 {
