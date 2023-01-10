@@ -6,25 +6,48 @@
         xmlns:local="clr-namespace:TwinCAT_Launcher"
         xmlns:mvm="clr-namespace:TwinCAT_Launcher.MVVM.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="true">
     <Window.Resources>
         <mvm:MainViewModel x:Key="vm"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource vm}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="420"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="450"/>
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <Label Content="Project Directory"/>
-            <TextBox Text="{Binding projectData.Directory}"/>
-            <Label Content="Project Name"/>
-            <TextBox Text="{Binding projectData.Name}"/>
-            <Button Content="Create"
-                    Command="{Binding createProjectCommand}"
-                    CommandParameter="{Binding projectData}"/>
-        </StackPanel>
-    </Grid>
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid DataContext="{StaticResource vm}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Flare"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="white"
+                   FontSize="22"
+                   Margin="20,0,0,0"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height=" 50"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="EtherCAT"
+                             Height=" 50"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="ADS"
+                             Height=" 50"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+            </StackPanel>
+        </Grid>
+        
+    </Border>
+    
 </Window>
