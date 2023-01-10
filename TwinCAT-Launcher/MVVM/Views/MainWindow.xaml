@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:TwinCAT_Launcher"
         xmlns:mvm="clr-namespace:TwinCAT_Launcher.MVVM.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="920"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="true">
-    <Window.Resources>
-        <mvm:MainViewModel x:Key="vm"/>
-    </Window.Resources>
+    <Window.DataContext>
+        <mvm:MainViewModel/>
+    </Window.DataContext>
     <Border Background="#272537"
             CornerRadius="20">
-        <Grid DataContext="{StaticResource vm}">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -28,7 +28,7 @@
             <TextBlock Text="Flare"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Foreground="white"
+                   Foreground="White"
                    FontSize="22"
                    Margin="20,0,0,0"/>
 
@@ -46,6 +46,11 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}">
+                
+            </ContentControl>
         </Grid>
         
     </Border>

@@ -2,6 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TwinCAT_Launcher"
+             xmlns:viewmodel="clr-namespace:TwinCAT_Launcher.MVVM.ViewModels"
+             xmlns:view="clr-namespace:TwinCAT_Launcher.MVVM.Views"
              StartupUri="MVVM/Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,5 +11,9 @@
                 <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+        <DataTemplate DataType="{x:Type viewmodel:ProjectViewModel}">
+            <view:MainView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

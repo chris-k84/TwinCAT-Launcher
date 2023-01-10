@@ -7,24 +7,30 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using Engine;
 using TwinCAT_Launcher.Commands;
+using TwinCAT_Launcher.Core;
 using TwinCAT_Launcher.MVVM.Models;
+using TwinCAT_Launcher.MVVM.Views;
 
 namespace TwinCAT_Launcher.MVVM.ViewModels
 {
-    class MainViewModel
+    class MainViewModel : ObservableObject
     {
-        VisualStudioHandler studioHandler;
-        public CreateProjectCommand createProjectCommand { get; set; }
-        public ProjectData projectData { get; set; }
+        public ProjectViewModel ProjectVM { get; set; }
+        private object _currentView;
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainViewModel()
         {
-            studioHandler = new VisualStudioHandler();
-            studioHandler.InitialiseVSEnv();
-            projectData = new ProjectData();
-            projectData.Name = "TestProject";
-            projectData.Directory = @"C:\Users\Chris\Documents\Projects\";
-            createProjectCommand = new CreateProjectCommand(studioHandler);
+            ProjectVM = new ProjectViewModel();
+            _currentView = ProjectVM;
         }
 
     }

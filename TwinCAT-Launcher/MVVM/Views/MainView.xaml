@@ -6,7 +6,105 @@
              xmlns:local="clr-namespace:TwinCAT_Launcher.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="Create Project"
+                   Foreground="white"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Check"
+                                   Foreground="White"
+                                   FontSize="24"/>
+                        <TextBlock Text="This"
+                                   Foreground="white"
+                                   FontSize="24"/>
+                    </StackPanel>
+                    <Image Source="/Images/ProjectCog.png" 
+                           Margin="257,25,0,25"/>
+                </Grid>
+            </Border>
+
+            <Border Width="200"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="45,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Check"
+                                   Foreground="White"
+                                   FontSize="24"/>
+                        <TextBlock Text="This"
+                                   Foreground="white"
+                                   FontSize="24"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Next Steps"
+                       Foreground="white"
+                       FontSize="28"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="Margin" Value="15,0,0,0"/>
+                    </Style>
+                    
+                </StackPanel.Resources>
+                <Border Width="150"
+                        Height="100"
+                        CornerRadius="10"
+                        Background="#844eff"
+                        Margin="0">
+                </Border>
+                <Border Width="150"
+                        Height="100"
+                        CornerRadius="10"
+                        Background="#844eff">
+                </Border>
+                <Border Width="150"
+                        Height="100"
+                        CornerRadius="10"
+                        Background="#844eff">
+                </Border>
+                <Border Width="150"
+                        Height="100"
+                        CornerRadius="10"
+                        Background="#844eff">
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+    </StackPanel>
 </UserControl>
