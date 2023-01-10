@@ -29,10 +29,10 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Check"
+                        <TextBlock Text="Here you can create&#x0a;a TwinCAT project &#x0a;"
                                    Foreground="White"
                                    FontSize="24"/>
-                        <TextBlock Text="This"
+                        <TextBlock Text="Add a name for the&#x0a;directory"
                                    Foreground="white"
                                    FontSize="24"/>
                     </StackPanel>
