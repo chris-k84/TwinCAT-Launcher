@@ -10,10 +10,14 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
 
-        <DataTemplate DataType="{x:Type viewmodel:ProjectViewModel}">
-            <view:MainView/>
-        </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:ProjectViewModel}">
+                <view:MainView/>
+            </DataTemplate>
+        
+            <DataTemplate DataType="{x:Type viewmodel:ADSViewModel}">
+                <view:ADSView/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
