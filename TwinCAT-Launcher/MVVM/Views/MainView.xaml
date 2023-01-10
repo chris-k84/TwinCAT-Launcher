@@ -41,7 +41,7 @@
                 </Grid>
             </Border>
 
-            <Border Width="200"
+            <Border Width="220"
                     Height="200"
                     CornerRadius="10"
                     Margin="45,0,0,0">
@@ -58,13 +58,20 @@
                                        Rect="0,0,400,200"/>
                 </Border.Clip>
                 <Grid>
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <Label Content="Project Directory"/>
-                        <TextBox Text="{Binding projectData.Directory}"/>
+                        <TextBox Text="{Binding projectData.Directory}"
+                                 Width=" 200"
+                                 HorizontalAlignment="Left"/>
                         <Label Content="Project Name"/>
-                        <TextBox Text="{Binding projectData.Name}"/>
+                        <TextBox Text="{Binding projectData.Name}"
+                                 Width="200"
+                                 HorizontalAlignment="Left"/>
                         <Button Content="Create"
-                                Command="{Binding createProjectCommand}"
+                                Width="200"
+                                HorizontalAlignment="Left"
+                                Margin="0,10,0,0"
+                                Command="{Binding CreateProjectCommand}"
                                 CommandParameter="{Binding projectData}"/>
                     </StackPanel>
                 </Grid>

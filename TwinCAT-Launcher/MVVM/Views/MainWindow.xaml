@@ -42,12 +42,12 @@
                 <RadioButton Content="EtherCAT"
                              Height=" 50"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding AdsViewCommand}"/>
+                             Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton Content="ADS"
                              Height=" 50"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding AdsViewCommand}"/>
             </StackPanel>
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
