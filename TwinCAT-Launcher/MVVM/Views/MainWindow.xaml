@@ -19,7 +19,8 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="233*"/>
+                <ColumnDefinition Width="487*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
@@ -51,11 +52,11 @@
             </StackPanel>
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Content="{Binding CurrentView}">
-                
+                            Content="{Binding CurrentView}" Grid.ColumnSpan="2">
+
             </ContentControl>
         </Grid>
-        
+
     </Border>
-    
+
 </Window>
