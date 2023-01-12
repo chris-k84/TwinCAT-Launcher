@@ -1,4 +1,5 @@
 ﻿using Engine;
+using System.Configuration.Internal;
 using TwinCAT_Launcher.Core;
 using TwinCAT_Launcher.MVVM.Models;
 
@@ -6,8 +7,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
 {
     class ProjectViewModel
     {
-        VisualStudioHandler studioHandler;
-        //public CreateProjectCommand createProjectCommand { get; set; }
+        public VisualStudioHandler studioHandler { get;}
         public RelayCommand CreateProjectCommand { get; set; }  
         public ProjectData projectData { get; set; }
 

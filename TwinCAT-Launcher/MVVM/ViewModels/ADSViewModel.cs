@@ -20,7 +20,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
 
         public ADSViewModel()
         {
-            AdsHandler = new AdsHandler();
+            //AdsHandler = new AdsHandler();
             ScanAdsServersCommand = new RelayCommand(ScanAdsServers);
         }
 
