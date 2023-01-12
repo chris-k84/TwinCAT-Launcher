@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutomationInterface-Engine" Version="1.0.1" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fonts\" />
+    <PackageReference Include="AutomationInterface-Engine" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
