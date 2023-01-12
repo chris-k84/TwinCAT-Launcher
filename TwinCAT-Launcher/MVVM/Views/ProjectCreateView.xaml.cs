@@ -18,9 +18,9 @@ namespace TwinCAT_Launcher.MVVM.Views
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    public partial class ProjectCreateView : UserControl
     {
-        public MainView()
+        public ProjectCreateView()
         {
             InitializeComponent();
         }
