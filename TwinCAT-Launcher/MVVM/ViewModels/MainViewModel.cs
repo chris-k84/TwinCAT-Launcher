@@ -23,7 +23,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
         public MainViewModel()
         {
             ProjectVM = new ProjectViewModel();
-            ADSVM = new ADSViewModel();
+            ADSVM = new ADSViewModel(ProjectVM.studioHandler);
             _currentView = ProjectVM;
             AdsViewCommand = new RelayCommand(o =>
             {
