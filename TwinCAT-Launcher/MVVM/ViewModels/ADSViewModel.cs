@@ -15,13 +15,12 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
         private AdsHandler AdsHandler;
         public List<XmlNode> Routes { get; set; }
         public XmlNode Route { get; set; }
+        public RelayCommand ScanAdsServersCommand { get; set; }
+        public RelayCommand AddRouteCommand { get; set; }
 
-        public RelayCommand ScanAdsServersCommand;
-        public RelayCommand AddRouteCommand;
-
-        public ADSViewModel(ISystemManager systemManager)
+        public ADSViewModel()
         {
-            AdsHandler = new AdsHandler(systemManager);
+            AdsHandler = new AdsHandler();
             ScanAdsServersCommand = new RelayCommand(ScanAdsServers);
             AddRouteCommand = new RelayCommand(CreateRoute);
         }
