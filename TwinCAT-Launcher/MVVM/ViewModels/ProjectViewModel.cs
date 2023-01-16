@@ -5,13 +5,19 @@ using TwinCAT_Launcher.MVVM.Models;
 
 namespace TwinCAT_Launcher.MVVM.ViewModels
 {
-    class ProjectViewModel
+    class ProjectViewModel : ObservableObject
     {
+        private ISystemManager _systemManager;
         public ISystemManager SystemManager 
         {
             get
             {
-                return studioHandler;
+                return _systemManager;
+            }
+            set 
+            {
+                _systemManager= value;
+                OnPropertyChanged();
             }
         }
 
@@ -37,6 +43,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
             studioHandler.CreateSolution(projectData.Name);
             studioHandler.CreateTCProj(projectData.Name);
             studioHandler.Save();
+            SystemManager = studioHandler;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using TwinCAT_Launcher.Core;
+﻿using Engine;
+using System;
+using System.ComponentModel;
+using TwinCAT_Launcher.Core;
 
 namespace TwinCAT_Launcher.MVVM.ViewModels
 {
@@ -7,6 +10,8 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
         public ProjectViewModel ProjectVM { get; set; }
         public ADSViewModel ADSVM { get; set; }
         private object _currentView;
+        private ISystemManager _systemManager;
+        private string _test;
         public object CurrentView
         {
             get { return _currentView; }
@@ -33,7 +38,12 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
             {
                 CurrentView = ProjectVM;
             });
+            ProjectVM.PropertyChanged += UpdateSysManRef;
         }
 
+        private void UpdateSysManRef(object? sender, PropertyChangedEventArgs e)
+        {
+            _test = e.PropertyName;
+        }
     }
 }
