@@ -46,7 +46,9 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
             {
                 string id = node["Name"].InnerText;
                 string name = node["NetId"].InnerText;
-                Roots.Add(new Root { Name = id, NetId = name });
+                string iP = node["IpAddr"].InnerText;
+                string oS = node["OS"].InnerText;
+                Roots.Add(new Root { Name = id, NetId = name, IpAddr= iP, OS = oS });
             }
         }
         public void CreateRoute(object parameter) 

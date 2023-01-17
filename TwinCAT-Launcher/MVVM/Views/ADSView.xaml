@@ -14,7 +14,7 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
         <StackPanel Orientation="Horizontal">
-            <Border Width="400"
+            <Border Width="250"
                     Height="200">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0"
@@ -26,7 +26,7 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,400,200"/>
+                                       Rect="0,0,250,200"/>
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
@@ -37,12 +37,10 @@
                                    Foreground="white"
                                    FontSize="24"/>
                     </StackPanel>
-                    <Image Source="/Images/ProjectCog.png" 
-                           Margin="257,25,0,25"/>
                 </Grid>
             </Border>
 
-            <Border Width="220"
+            <Border Width="500"
                     Height="200"
                     CornerRadius="10"
                     Margin="45,0,0,0">
@@ -56,7 +54,7 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,400,200"/>
+                                       Rect="0,0,420,200"/>
                 </Border.Clip>
                 <Grid>
                     <StackPanel Margin="10">
@@ -66,23 +64,17 @@
                                 Margin="0,10,0,0"
                                 Command="{Binding ScanAdsServersCommand}"/>
                         <Label Content="Target Devices"/>
-                        <ListView ItemsSource="{Binding Roots}">
-
+                        <ListView ItemsSource="{Binding Roots}"
+                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                 Width="400"
+                                  HorizontalAlignment="Left">
                             <ListView.View>
                                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Ads Routes">
                                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="100"/>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Path=NetId}" Width="100">
-                                        <GridViewColumnHeader>NetId
-                                            <GridViewColumnHeader.ContextMenu>
-                                                <ContextMenu>
-                                                    <MenuItem Header="Ascending" />
-                                                    <MenuItem Header="Descending" />
-                                                </ContextMenu>
-                                            </GridViewColumnHeader.ContextMenu>
-                                        </GridViewColumnHeader>
-                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=NetId}" Header="NetId" Width="100"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=IpAddr}" Header="IpAddr" Width="100"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=OS}" Header="OS" Width="100"/>
                                 </GridView>
-
                             </ListView.View>
                         </ListView>
                         <Button Content="Create"
