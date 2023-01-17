@@ -66,9 +66,25 @@
                                 Margin="0,10,0,0"
                                 Command="{Binding ScanAdsServersCommand}"/>
                         <Label Content="Target Devices"/>
-                        <TextBox Text="Fill with routes"
-                                 Width="200"
-                                 HorizontalAlignment="Left"/>
+                        <ListView ItemsSource="{Binding Roots}">
+
+                            <ListView.View>
+                                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Ads Routes">
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="100"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=NetId}" Width="100">
+                                        <GridViewColumnHeader>NetId
+                                            <GridViewColumnHeader.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Header="Ascending" />
+                                                    <MenuItem Header="Descending" />
+                                                </ContextMenu>
+                                            </GridViewColumnHeader.ContextMenu>
+                                        </GridViewColumnHeader>
+                                    </GridViewColumn>
+                                </GridView>
+
+                            </ListView.View>
+                        </ListView>
                         <Button Content="Create"
                                 Width="200"
                                 HorizontalAlignment="Left"

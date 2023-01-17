@@ -20,11 +20,9 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
                 OnPropertyChanged();
             }
         }
-
         private VisualStudioHandler studioHandler;
         public RelayCommand CreateProjectCommand { get; set; }  
         public ProjectData projectData { get; set; }
-
         public ProjectViewModel()
         {
             studioHandler = new VisualStudioHandler();
@@ -34,7 +32,6 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
             projectData.Directory = @"C:\Users\ChrisK\Documents\Projects\";
             CreateProjectCommand = new RelayCommand(CreateProject);
         }
-
         public void CreateProject(object parameter)
         {
             ProjectData projectData = (ProjectData)parameter;
