@@ -10,7 +10,6 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
         public ProjectViewModel ProjectVM { get; set; }
         public ADSViewModel ADSVM { get; set; }
         private object _currentView;
-        private ISystemManager _systemManager;
         private string _test;
         public object CurrentView
         {
@@ -43,7 +42,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
 
         private void UpdateSysManRef(object? sender, PropertyChangedEventArgs e)
         {
-            _test = e.PropertyName;
+            ADSVM.SystemManager = ProjectVM.SystemManager;
         }
     }
 }
