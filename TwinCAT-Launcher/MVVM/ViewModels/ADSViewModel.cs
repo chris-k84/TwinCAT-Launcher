@@ -1,6 +1,7 @@
 ﻿using Engine;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Text;
@@ -16,7 +17,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
     {
         private AdsHandler AdsHandler = new AdsHandler();
         public List<XmlNode> Routes { get; set; }
-        public List<Root> Roots { get; set; }   
+        public ObservableCollection<Root> Roots { get; set; }   
         public XmlNode Route { get; set; }
         public RelayCommand ScanAdsServersCommand { get; set; }
         public RelayCommand AddRouteCommand { get; set; }
@@ -34,7 +35,7 @@ namespace TwinCAT_Launcher.MVVM.ViewModels
         public ADSViewModel()
         {
             Routes = new List<XmlNode>();
-            Roots = new List<Root>();
+            Roots = new ObservableCollection<Root>();
             ScanAdsServersCommand = new RelayCommand(ScanAdsServers);
             AddRouteCommand = new RelayCommand(CreateRoute);
         }
